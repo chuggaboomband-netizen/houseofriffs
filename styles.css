@@ -67,7 +67,8 @@ img {
 }
 
 .site-header,
-.hero-copy {
+.hero-copy,
+.hero-wordmark-wrap {
   position: relative;
   z-index: 1;
 }
@@ -93,12 +94,32 @@ img {
   gap: 14px;
 }
 
+.site-brand-emblem {
+  gap: 0;
+}
+
 .site-emblem {
   width: clamp(42px, 4vw, 56px);
 }
 
 .site-wordmark {
   width: clamp(180px, 22vw, 300px);
+}
+
+.hero-wordmark-wrap {
+  position: absolute;
+  top: clamp(84px, 13vh, 132px);
+  left: 50%;
+  width: min(78vw, 720px);
+  transform: translateX(-50%);
+}
+
+.hero-wordmark {
+  width: 100%;
+  filter:
+    drop-shadow(0 8px 18px rgba(0, 0, 0, 0.42))
+    drop-shadow(0 20px 42px rgba(0, 0, 0, 0.34))
+    drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
 }
 
 .site-nav {
@@ -247,9 +268,10 @@ img {
 }
 
 .artist-card-page img {
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  object-position: center;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center top;
 }
 
 .card-copy {
@@ -307,9 +329,14 @@ img {
   }
 
   .site-header {
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding: 22px 20px 0;
+  }
+
+  .page-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .hero-copy {
@@ -320,8 +347,9 @@ img {
     max-width: 260px;
   }
 
-  .site-wordmark {
-    width: min(62vw, 260px);
+  .hero-wordmark-wrap {
+    top: 108px;
+    width: min(72vw, 360px);
   }
 
   .hero-copy p {
@@ -348,8 +376,14 @@ img {
     width: min(58vw, 210px);
   }
 
+  .hero-wordmark-wrap {
+    top: 94px;
+    width: min(72vw, 300px);
+  }
+
   .site-nav {
-    gap: 14px;
+    justify-content: flex-end;
+    gap: 10px 14px;
   }
 
   .site-nav a {
@@ -402,5 +436,6 @@ img {
 
   .artist-card-page img {
     aspect-ratio: auto;
+    object-fit: contain;
   }
 }
