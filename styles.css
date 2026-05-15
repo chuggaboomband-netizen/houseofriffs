@@ -339,10 +339,6 @@ img {
     justify-content: space-between;
   }
 
-  .page-header .site-wordmark {
-    display: none;
-  }
-
   .hero-copy {
     left: 20px;
     right: 20px;
@@ -406,6 +402,12 @@ img {
   .hero-copy p {
     font-size: clamp(1.65rem, 10.5vw, 2.5rem);
     line-height: 0.92;
+  }
+}
+
+@media (max-width: 900px) {
+  .content-page .site-wordmark {
+    display: none;
   }
 }
 
