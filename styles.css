@@ -178,6 +178,12 @@ img {
   padding: 16px;
 }
 
+.bandsintown-card-embedded {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
 .booking-callout {
   margin-top: 18px;
   padding-top: 16px;
@@ -207,6 +213,30 @@ img {
   color: var(--muted);
   font-size: 0.88rem;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.events-embed-block {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.events-embed-kicker {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.events-embed-block h3 {
+  margin: 8px 0 0;
+  font-family: "Oswald", "Arial Narrow", sans-serif;
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+  font-weight: 500;
+  line-height: 0.95;
   text-transform: uppercase;
 }
 
