@@ -339,6 +339,10 @@ img {
     justify-content: space-between;
   }
 
+  .page-header .site-wordmark {
+    display: none;
+  }
+
   .hero-copy {
     left: 20px;
     right: 20px;
