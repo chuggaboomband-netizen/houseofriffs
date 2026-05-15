@@ -1,0 +1,10 @@
+<svg width="800" height="1100" viewBox="0 0 800 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1100" rx="28" fill="#101010"/>
+  <path d="M78 928L256 650L402 778L614 476L722 600" stroke="#D6A46D" stroke-width="10" stroke-linecap="round"/>
+  <text x="78" y="134" fill="#D6A46D" font-family="Arial, sans-serif" font-size="28" letter-spacing="6">ARCHIVE</text>
+  <text x="78" y="232" fill="#F3F0EA" font-family="Arial, sans-serif" font-size="92" font-weight="700">SHOW</text>
+  <text x="78" y="322" fill="#F3F0EA" font-family="Arial, sans-serif" font-size="92" font-weight="700">POSTER</text>
+  <text x="78" y="410" fill="#B8B0A4" font-family="Arial, sans-serif" font-size="34">Use this slot for another previous flyer or poster.</text>
+  <rect x="78" y="470" width="644" height="2" fill="#D6A46D" fill-opacity="0.4"/>
+  <text x="78" y="1020" fill="#B8B0A4" font-family="Arial, sans-serif" font-size="28">House of Riffs • Rock / Metal • Booking</text>
+</svg>
