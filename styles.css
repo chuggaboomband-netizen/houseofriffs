@@ -255,53 +255,51 @@ img {
 }
 
 .booking-callout {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px 18px;
   margin-top: 22px;
-  padding: 16px 18px;
-  border: 1px solid rgba(244, 240, 233, 0.14);
-  background: rgba(255, 255, 255, 0.025);
 }
 
-.booking-callout p {
-  display: flex;
-  align-items: center;
-  min-height: 42px;
-  margin: 0;
-  flex: 1 1 240px;
-  color: var(--text);
-  font-weight: 600;
-  line-height: 1.1;
-  transform: translateY(-2px);
-}
-
-.booking-callout a {
+.booking-callout-button {
   display: inline-flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  min-height: 42px;
-  padding: 0 18px;
-  border-radius: 999px;
+  gap: 4px;
+  width: 100%;
+  min-height: 78px;
+  margin-top: 22px;
+  padding: 16px 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(244, 240, 233, 0.14);
   background: var(--text);
   color: #060606;
-  font-size: 0.86rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   transition:
     transform 180ms ease,
     box-shadow 180ms ease,
     background-color 180ms ease;
 }
 
-.booking-callout a:hover,
-.booking-callout a:focus-visible {
+.booking-callout-button:hover,
+.booking-callout-button:focus-visible {
   transform: translateY(-1px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
   background: #ffffff;
+}
+
+.booking-callout-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.booking-callout-email {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
 }
 
 .roster-note {
@@ -460,21 +458,16 @@ img {
   }
 
   .booking-callout {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 10px;
-    padding: 12px 14px;
+    margin-top: 18px;
   }
 
-  .booking-callout p {
-    flex: none;
-    min-height: 0;
-    transform: none;
+  .booking-callout-button {
+    min-height: 72px;
+    padding: 14px 16px;
   }
 
-  .booking-callout a {
-    width: 100%;
-    justify-content: center;
+  .booking-callout-email {
+    font-size: 0.92rem;
   }
 
   .artist-media-wrap {
