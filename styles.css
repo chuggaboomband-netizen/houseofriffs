@@ -464,6 +464,12 @@ img {
     flex-direction: column;
   }
 
+  .booking-callout p {
+    flex: none;
+    min-height: 0;
+    transform: none;
+  }
+
   .booking-callout a {
     width: 100%;
     justify-content: center;
