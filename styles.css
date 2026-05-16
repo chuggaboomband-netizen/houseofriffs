@@ -422,26 +422,35 @@ img {
 .artist-socials {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 10px;
   margin-top: 18px;
 }
 
 .artist-socials a {
-  display: inline-flex;
+  display: inline-flex !important;
+  flex: 0 0 auto;
   align-items: center;
   justify-content: center;
   gap: 8px;
+  width: fit-content;
+  max-width: 100%;
   min-height: 40px;
   padding: 10px 14px;
+  margin: 0;
   border-radius: 999px;
   border: 1px solid rgba(244, 240, 233, 0.14);
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.05);
   color: var(--text);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   line-height: 1;
+  white-space: nowrap;
   text-transform: uppercase;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  appearance: none;
   transition:
     transform 180ms ease,
     box-shadow 180ms ease,
@@ -450,7 +459,13 @@ img {
 }
 
 .artist-socials i {
+  flex: 0 0 auto;
   font-size: 0.95rem;
+}
+
+.artist-socials span {
+  display: block;
+  line-height: 1;
 }
 
 .artist-socials a:hover,
