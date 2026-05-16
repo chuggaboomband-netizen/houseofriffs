@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ChuggaBoom — EPK</title>
+    <meta name="description" content="ChuggaBoom is the Deadpool of metalcore — EPK / one sheet." />
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Accent colour -->
+    <script>
+      tailwind.config = {
+        theme: { extend: { colors: { accent: { DEFAULT: '#e11d48' } } } }
+      }
+    </script>
+
+    <style>
+      .page { max-width: 1040px; }
+      .cover { box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+      .overlay:before {
+        content: ""; position: absolute; inset: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.18) 45%, rgba(0,0,0,.82) 100%);
+      }
+      .btn, .btn-ghost { display:inline-flex; align-items:center; gap:.5rem; border-radius:9999px; padding:.375rem .75rem; font-size:.875rem; font-weight:600; }
+      .btn { border:1px solid #404040; background:transparent; transition:background-color .2s; }
+      .btn:hover { background:#262626; }
+      .btn-ghost { background:rgba(10,10,10,.6); border:1px solid rgba(64,64,64,.7); }
+      .stat { display:inline-flex; align-items:center; gap:.5rem; border-radius:1rem; padding:.5rem .875rem; background:rgba(10,10,10,.72); border:1px solid rgba(64,64,64,.72); backdrop-filter:saturate(1.2) blur(2px); }
+      .stat .num { font-size:1.25rem; font-weight:800; line-height:1; }
+      .stat .label { font-size:.875rem; color:#d4d4d4; }
+      .video{position:relative;padding-bottom:56.25%;height:0;border-radius:1rem;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.35);}
+      .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+      .slideshow{position:relative}
+      .slide{position:absolute;inset:0;opacity:0;transition:opacity .7s ease}
+      .slide.is-active{opacity:1}
+      .dots{display:flex;gap:.5rem;align-items:center}
+      .dot{width:.5rem;height:.5rem;border-radius:9999px;background:#525252;opacity:.7}
+      .dot.is-active{background:#e11d48;opacity:1}
+      .ctrl{display:inline-flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border-radius:9999px;background:rgba(0,0,0,.55);border:1px solid rgba(120,120,120,.35)}
+      .no-scrollbar::-webkit-scrollbar{display:none}
+      .no-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
+      @media (prefers-reduced-motion: reduce) { * { animation:none !important; transition:none !important; } }
+    </style>
+  </head>
+  <body class="bg-neutral-950 text-neutral-100 antialiased">
+    <main class="mx-auto page">
+      <!-- HERO -->
+      <section class="relative h-[56vh] min-h-[460px] w-full overflow-hidden rounded-b-3xl">
+        <img src="./assets/hero_2026.jpg" alt="ChuggaBoom band hero" class="absolute inset-0 h-full w-full object-cover" />
+        <div class="overlay absolute inset-0"></div>
+        <div class="relative z-10 flex h-full items-end p-6 sm:p-10">
+          <div>
+            <span class="inline-flex items-center gap-2 rounded-full bg-neutral-900/70 px-3 py-1 text-xs font-medium ring-1 ring-inset ring-neutral-700">
+              <span class="block h-2 w-2 rounded-full bg-accent"></span> UK Metalcore
+            </span>
+            <h1 class="mt-3 text-5xl sm:text-6xl font-extrabold tracking-tight drop-shadow">CHUGGABOOM</h1>
+
+            <!-- Partner logos: iPhone-safe containers -->
+            <div class="mt-4 flex items-center gap-3 sm:gap-4 flex-nowrap">
+              <div class="h-5 sm:h-6 md:h-8 lg:h-10 flex items-center">
+                <img src="../assets/hor-wordmark.svg" alt="House of Riffs"
+                     class="h-full w-auto flex-none block object-contain" />
+              </div>
+              <span class="hidden sm:block h-5 w-px bg-neutral-600" aria-hidden="true"></span>
+              <div class="h-6 sm:h-7 md:h-9 lg:h-12 flex items-center">
+                <img src="./assets/logo_ernieball.svg" alt="Ernie Ball"
+                     class="h-full w-auto flex-none block object-contain" />
+              </div>
+              <span class="hidden sm:block h-5 w-px bg-neutral-600" aria-hidden="true"></span>
+              <div class="h-6 sm:h-7 md:h-9 lg:h-12 flex items-center">
+                <img src="./assets/logo_high5ive.png" alt="High 5ive Music"
+                     class="h-full w-auto flex-none block object-contain" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTRO / BIO -->
+      <section class="px-6 sm:px-10 pt-10">
+        <p class="text-center text-xl sm:text-2xl font-semibold text-neutral-200">ChuggaBoom is the Deadpool of metalcore</p>
+        <p class="mt-6 text-neutral-300 leading-relaxed text-base sm:text-lg">
+          ChuggaBoom is a genre-bending metalcore band that bring a unique blend of humour, heavy music, and infectious energy to the stage. Hailing from Birmingham, UK, this group of talented musicians combine their love for metal and pop culture to create an unforgettable experience for fans.
+        </p>
+        <p class="mt-4 text-neutral-300 leading-relaxed text-base sm:text-lg">
+          Combining crushing breakdowns, infectious melodies, and their signature witty, tongue-in-cheek lyrics, ChuggaBoom deliver a live experience that leaves audiences headbanging, grinning, and fully locked into The Chugg Life.
+        </p>
+        <p class="mt-4 text-neutral-300 leading-relaxed text-base sm:text-lg">
+          In 2026, ChuggaBoom are carving out a bold new position in the scene with a new look, new music, and a renewed determination to spread The Chugg Life as far as it can go. It is the next chapter of the band, but with the same chaos, charisma, and unmistakable energy that made them stand out in the first place.
+        </p>
+      </section>
+
+      <!-- AUDIENCE HIGHLIGHT -->
+      <section class="px-6 sm:px-10 mt-10">
+        <div class="rounded-3xl bg-neutral-900/60 ring-1 ring-inset ring-neutral-800 p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+          <div>
+            <div class="text-xs uppercase tracking-wide text-neutral-400">Combined social following</div>
+            <div class="mt-1 text-5xl sm:text-6xl font-extrabold">157,000+</div>
+          </div>
+          <div class="flex flex-wrap gap-2 text-sm text-neutral-300">
+            <a class="btn-ghost" href="https://instagram.com/chuggaboomband">Instagram</a>
+            <a class="btn-ghost" href="https://tiktok.com/@chuggaboomband">TikTok</a>
+            <a class="btn-ghost" href="https://facebook.com/chuggaboomband">Facebook</a>
+            <a class="btn-ghost" href="https://twitter.com/chuggaboomband">Twitter / X</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="px-6 sm:px-10 mt-12">
+        <div class="rounded-3xl bg-neutral-900/60 ring-1 ring-inset ring-neutral-800 p-6 sm:p-8">
+          <h2 class="text-xl font-bold mb-6">Booking & Enquiries</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- UK / Ireland Booking -->
+            <article class="min-w-0 rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg flex flex-col justify-between">
+              <div>
+                <h3 class="text-lg font-bold flex items-center gap-2">🇬🇧 UK / Ireland Booking</h3>
+                <p class="text-neutral-200 mt-3 font-semibold">Jake Barnes</p>
+                <p class="text-neutral-400">House of Riffs</p>
+              </div>
+              <div class="mt-4 space-y-2">
+                <a href="mailto:bookings@houseofriffs.com" class="flex min-w-0 items-start gap-2 text-sm underline underline-offset-4 hover:no-underline sm:text-base">
+                  <span class="shrink-0">📧</span>
+                  <span class="min-w-0 break-all leading-snug">bookings@houseofriffs.com</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- EU Booking -->
+            <article class="min-w-0 rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg flex flex-col justify-between">
+              <div>
+                <h3 class="text-lg font-bold flex items-center gap-2">🇪🇺 EU Booking</h3>
+                <p class="text-neutral-200 mt-3 font-semibold">Berni Ullrich</p>
+                <p class="text-neutral-400">High 5ive Booking</p>
+              </div>
+              <div class="mt-4 space-y-2">
+                <a href="mailto:Berni@high5ive.se" class="flex min-w-0 items-start gap-2 text-sm underline underline-offset-4 hover:no-underline sm:text-base">
+                  <span class="shrink-0">📧</span>
+                  <span class="min-w-0 break-all leading-snug">Berni@high5ive.se</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- General Enquiries -->
+            <article class="min-w-0 rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg flex flex-col justify-between">
+              <div>
+                <h3 class="text-lg font-bold flex items-center gap-2">📣 General Enquiries</h3>
+                <p class="text-neutral-200 mt-3 font-semibold">Band Email</p>
+                <p class="text-neutral-400">ChuggaBoom</p>
+              </div>
+              <div class="mt-4 space-y-2">
+                <a href="mailto:chuggaboomband@gmail.com" class="flex min-w-0 items-start gap-2 text-sm underline underline-offset-4 hover:no-underline sm:text-base">
+                  <span class="shrink-0">📧</span>
+                  <span class="min-w-0 break-all leading-snug">chuggaboomband@gmail.com</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- FFO / LIVE STRIP + METRICS -->
+      <section class="px-6 sm:px-10 mt-10">
+        <div class="relative overflow-hidden rounded-3xl ring-1 ring-inset ring-neutral-800">
+          <img src="./assets/live.jpg" alt="ChuggaBoom live show" class="h-96 w-full object-cover" loading="lazy" />
+          <div class="absolute bottom-4 left-4 flex flex-wrap gap-3">
+            <span class="stat"><img src="./assets/spotify_icon.svg" alt="Spotify" class="h-5"/> <span class="num">73,000+</span> <span class="label">monthly listeners</span></span>
+            <span class="stat"><span class="num">18M+</span> <span class="label">total streams</span></span>
+          </div>
+        </div>
+        <div class="mt-4 text-sm sm:text-base text-neutral-300">
+          <span class="font-semibold">FFO:</span> Electric Callboy, Ice Nine Kills, Erra
+        </div>
+      </section>
+
+      <!-- PRESS / QUOTE -->
+      <section class="px-6 sm:px-10 mt-12">
+        <div class="rounded-3xl bg-neutral-900/60 ring-1 ring-inset ring-neutral-800 p-6">
+          <div class="text-4xl leading-none text-neutral-600">“</div>
+          <p class="-mt-2 text-neutral-200 italic leading-relaxed">
+            As the nu metal revival fully takes hold, it’s always good to remember that for all the monster tunes the genre produced, there was always a sense of daftness lurking (barely) below the surface. ChuggaBoom embrace that fully on <em>No Rules, No Limits</em>, the single mixing rapped verses, mosh-calls, breakdowns and screeching electronica in pure nu metalcore bliss.
+          </p>
+          <p class="mt-3 text-right text-neutral-400 italic"> - <span class="font-semibold tracking-wide">Rich Hobson</span></p>
+        </div>
+      </section>
+
+      <!-- RECENT RELEASES -->
+      <section class="px-6 sm:px-10 mt-12" id="recent-releases">
+        <h2 class="text-xl font-bold">Recent Releases</h2>
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <article class="rounded-2xl bg-neutral-900/60 ring-1 ring-inset ring-neutral-800 p-3">
+            <div class="video">
+              <iframe src="https://www.youtube-nocookie.com/embed/aUicMGUrum0" title="ChuggaBoom recent release video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <h3 class="mt-3 text-sm text-neutral-200"><span class="font-bold">Latest Music</span> - 'cba</h3>
+          </article>
+          <article class="rounded-2xl bg-neutral-900/60 ring-1 ring-inset ring-neutral-800 p-3">
+            <div class="video">
+              <iframe src="https://www.youtube-nocookie.com/embed/vgquzZ3JmQc" title="ChuggaBoom recent release video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <h3 class="mt-3 text-sm text-neutral-200">Music To Drown By</h3>
+          </article>
+        </div>
+      </section>
+
+      <!-- LIVE GALLERY -->
+      <section class="px-6 sm:px-10 mt-12 mb-24" id="live-gallery">
+        <div class="flex items-baseline justify-between">
+          <h2 class="text-xl font-bold">Live Gallery</h2>
+        </div>
+        <div class="mt-4 rounded-3xl ring-1 ring-inset ring-neutral-800 overflow-hidden">
+          <div class="slideshow" data-folder="live">
+            <div class="relative h-[42vh] min-h-[360px] sm:h-[48vh] sm:min-h-[420px]"><!-- slides are injected by JS --></div>
+            <div class="flex items-center justify-between p-3">
+              <div class="flex items-center gap-2">
+                <button class="ctrl prev" aria-label="Previous slide">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <button class="ctrl next" aria-label="Next slide">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+              </div>
+              <div class="dots"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Slideshow script -->
+    <script>
+      (async function(){
+        const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const carousels = document.querySelectorAll('.slideshow');
+        for (const el of carousels){ await setup(el); }
+
+        async function setup(el){
+          const rel = el.querySelector('.relative');
+          const dotsWrap = el.querySelector('.dots');
+          const prevBtn = el.querySelector('.prev');
+          const nextBtn = el.querySelector('.next');
+          const folder = (el.dataset.folder || '').trim();
+
+          let files = [];
+          if (folder){
+            files = await getFilesFromFolder(folder);
+          } else {
+            files = (el.dataset.images || '').split(',').map(s=>s.trim()).filter(Boolean);
+          }
+          if(files.length === 0){ return; }
+
+          const slides = files.map((file, idx)=>{
+            const d = document.createElement('div');
+            d.className = 'slide';
+            const img = document.createElement('img');
+            img.src = folder ? `./assets/${folder}/${file}` : `./assets/${file}`;
+            img.alt = 'Live photo ' + (idx+1);
+            img.loading = 'lazy';
+            img.className = 'absolute inset-0 w-full h-full object-cover object-center';
+            img.style.objectPosition = 'center';
+            d.appendChild(img);
+            rel.appendChild(d);
+            return d;
+          });
+
+          const dots = files.map((_, idx)=>{
+            const dot = document.createElement('button');
+            dot.className = 'dot';
+            dot.type = 'button';
+            dot.ariaLabel = 'Go to slide ' + (idx+1);
+            dot.addEventListener('click', ()=>go(idx));
+            dotsWrap.appendChild(dot);
+            return dot;
+          });
+
+          let i = 0, timer = null, delay = 5000;
+          function activate(n){
+            slides.forEach((s, j)=> s.classList.toggle('is-active', j===n));
+            dots.forEach((d, j)=> d.classList.toggle('is-active', j===n));
+          }
+          function go(n){ i = (n + slides.length) % slides.length; activate(i); restart(); }
+          function next(){ go(i+1); }
+          function prev(){ go(i-1); }
+
+          prevBtn.addEventListener('click', prev);
+          nextBtn.addEventListener('click', next);
+
+          function start(){ if(slides.length>1 && !prefersReduced){ timer = setInterval(next, delay); } }
+          function stop(){ if(timer){ clearInterval(timer); timer=null; } }
+          function restart(){ stop(); start(); }
+
+          el.addEventListener('mouseenter', stop);
+          el.addEventListener('mouseleave', start);
+          document.addEventListener('visibilitychange', ()=>{ if(document.hidden) stop(); else start(); });
+
+          activate(0); start();
+        }
+
+        async function getFilesFromFolder(folder){
+          const allowedExt = ['jpg','jpeg','png','webp','avif'];
+          try {
+            const r = await fetch(`./assets/${folder}/manifest.json`);
+            if (r.ok) {
+              const arr = await r.json();
+              return arr.filter(fn => allowedExt.some(ext => fn.toLowerCase().endsWith('.'+ext)));
+            }
+          } catch(_) {}
+          try {
+            const r = await fetch(`./assets/${folder}/`);
+            if (r.ok) {
+              const html = await r.text();
+              const links = [...html.matchAll(/href="([^"]+)"/g)].map(m=>m[1]);
+              const files = links.filter(h => allowedExt.some(ext => h.toLowerCase().endsWith('.'+ext)));
+              if (files.length) return files;
+            }
+          } catch(_) {}
+          const prefixes = ['live_','live-'];
+          const exts = allowedExt;
+          const numbers = Array.from({length:60}, (_,i)=> String(i+1).padStart(2,'0'));
+          const candidates = [];
+          for (const p of prefixes){ for (const n of numbers){ for (const e of exts){ candidates.push(`${p}${n}.${e}`); } } }
+          const found = [];
+          await Promise.all(candidates.map(name => new Promise(res => {
+            const img = new Image();
+            img.onload = ()=>{ found.push(name); res(); };
+            img.onerror = ()=>res();
+            img.src = `./assets/${folder}/${name}`;
+          })));
+          return found;
+        }
+      })();
+    </script>
+  </body>
+</html>
