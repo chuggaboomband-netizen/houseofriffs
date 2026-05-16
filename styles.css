@@ -275,6 +275,7 @@ img {
   color: var(--text);
   font-weight: 600;
   line-height: 1.1;
+  transform: translateY(-2px);
 }
 
 .booking-callout a {
