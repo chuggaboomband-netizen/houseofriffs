@@ -18,9 +18,17 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="landing-page">
-      <div class="hero-image" aria-hidden="true"></div>
-      <div class="hero-overlay"></div>
+    <main class="landing-page" id="landingPage">
+      <div class="hero-track" aria-hidden="true">
+        <div class="hero-panel hero-panel-home">
+          <div class="hero-image hero-image-home"></div>
+          <div class="hero-overlay hero-overlay-home"></div>
+        </div>
+        <div class="hero-panel hero-panel-about">
+          <div class="hero-image hero-image-about"></div>
+          <div class="hero-overlay hero-overlay-about"></div>
+        </div>
+      </div>
 
       <header class="site-header">
         <a class="site-brand site-brand-emblem" href="index.html" aria-label="House of Riffs home">
@@ -28,6 +36,7 @@
         </a>
         <nav class="site-nav" aria-label="Primary">
           <a href="index.html">Home</a>
+          <button type="button" class="nav-toggle-link" id="aboutToggle" aria-expanded="false" aria-controls="aboutPanel">About</button>
           <a href="roster.html">Roster</a>
           <a href="events.html">Previous Events</a>
           <a href="mailto:bookings@houseofriffs.com">Contact</a>
@@ -41,6 +50,63 @@
       <section class="hero-copy">
         <p>Rock &amp; metal events management</p>
       </section>
+
+      <section class="about-panel" id="aboutPanel" aria-hidden="true">
+        <button type="button" class="about-close" id="aboutClose" aria-label="Close about panel">
+          <span aria-hidden="true">&times;</span>
+          <span>Close</span>
+        </button>
+        <img class="about-wordmark" src="assets/hor-wordmark.svg" alt="House of Riffs logo" />
+        <div class="about-copy">
+          <p class="about-kicker">About</p>
+          <h1>About House of Riffs</h1>
+          <p>
+            House of Riffs is a booking agency built from real experience inside the live music scene.
+          </p>
+          <p>
+            With over 35 years of collective experience across bands, touring, promoting shows,
+            artist development and live events, we understand what it takes to build the right
+            opportunities for artists and deliver reliable, well-matched shows for promoters and venues.
+          </p>
+          <p>
+            We work with rock, metal and alternative artists who are serious about growing their
+            audience, developing their live presence and making every show count.
+          </p>
+          <p>
+            Our role is to connect the dots - the right artists, the right rooms, the right promoters
+            and the right strategy.
+          </p>
+          <p>
+            Good booking is about more than filling dates. It is about understanding the artist,
+            the audience, the venue and the bigger picture. House of Riffs brings practical
+            experience, industry knowledge and a genuine connection to the scene, offering artists
+            and promoters a professional booking partner that understands live music from every angle.
+          </p>
+        </div>
+      </section>
     </main>
+    <script>
+      (() => {
+        const landingPage = document.getElementById("landingPage");
+        const aboutToggle = document.getElementById("aboutToggle");
+        const aboutClose = document.getElementById("aboutClose");
+        const aboutPanel = document.getElementById("aboutPanel");
+
+        if (!landingPage || !aboutToggle || !aboutClose || !aboutPanel) return;
+
+        const setAboutState = (isAboutOpen) => {
+          landingPage.classList.toggle("is-about-open", isAboutOpen);
+          aboutToggle.setAttribute("aria-expanded", String(isAboutOpen));
+          aboutPanel.setAttribute("aria-hidden", String(!isAboutOpen));
+        };
+
+        aboutToggle.addEventListener("click", () => setAboutState(true));
+        aboutClose.addEventListener("click", () => setAboutState(false));
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") setAboutState(false);
+        });
+      })();
+    </script>
   </body>
 </html>
