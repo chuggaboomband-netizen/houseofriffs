@@ -462,6 +462,8 @@ img {
   .booking-callout {
     align-items: flex-start;
     flex-direction: column;
+    gap: 10px;
+    padding: 12px 14px;
   }
 
   .booking-callout p {
