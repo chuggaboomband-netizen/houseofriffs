@@ -58,7 +58,6 @@
         </button>
         <img class="about-wordmark" src="assets/hor-wordmark.svg" alt="House of Riffs logo" />
         <div class="about-copy">
-          <p class="about-kicker">About</p>
           <h1>About House of Riffs</h1>
           <p>
             House of Riffs is a booking agency built from real experience inside the live music scene.
@@ -91,8 +90,21 @@
         const aboutToggle = document.getElementById("aboutToggle");
         const aboutClose = document.getElementById("aboutClose");
         const aboutPanel = document.getElementById("aboutPanel");
+        const ABOUT_ENTER_MS = 240;
+        const ABOUT_EXIT_MS = 260;
+        const HERO_RETURN_MS = 1240;
+        const HERO_OPEN_MS = 1240;
+        let openTimeoutId;
+        let closeTimeoutId;
+        let returnTimeoutId;
 
         if (!landingPage || !aboutToggle || !aboutClose || !aboutPanel) return;
+
+        const clearTransitionTimers = () => {
+          window.clearTimeout(openTimeoutId);
+          window.clearTimeout(closeTimeoutId);
+          window.clearTimeout(returnTimeoutId);
+        };
 
         const setAboutState = (isAboutOpen) => {
           landingPage.classList.toggle("is-about-open", isAboutOpen);
@@ -100,11 +112,45 @@
           aboutPanel.setAttribute("aria-hidden", String(!isAboutOpen));
         };
 
-        aboutToggle.addEventListener("click", () => setAboutState(true));
-        aboutClose.addEventListener("click", () => setAboutState(false));
+        const openAbout = () => {
+          if (landingPage.classList.contains("is-about-open")) return;
+
+          clearTransitionTimers();
+          landingPage.classList.remove("is-about-exiting", "is-home-returning");
+          landingPage.classList.add("is-transitioning", "is-about-entering");
+
+          openTimeoutId = window.setTimeout(() => {
+            setAboutState(true);
+            landingPage.classList.remove("is-about-entering");
+          }, ABOUT_ENTER_MS);
+
+          returnTimeoutId = window.setTimeout(() => {
+            landingPage.classList.remove("is-transitioning");
+          }, ABOUT_ENTER_MS + HERO_OPEN_MS);
+        };
+
+        const closeAbout = () => {
+          if (!landingPage.classList.contains("is-about-open")) return;
+
+          clearTransitionTimers();
+          landingPage.classList.add("is-transitioning", "is-about-exiting");
+
+          closeTimeoutId = window.setTimeout(() => {
+            setAboutState(false);
+            landingPage.classList.remove("is-about-exiting");
+            landingPage.classList.add("is-home-returning");
+          }, ABOUT_EXIT_MS);
+
+          returnTimeoutId = window.setTimeout(() => {
+            landingPage.classList.remove("is-home-returning", "is-transitioning");
+          }, ABOUT_EXIT_MS + HERO_RETURN_MS);
+        };
+
+        aboutToggle.addEventListener("click", openAbout);
+        aboutClose.addEventListener("click", closeAbout);
 
         document.addEventListener("keydown", (event) => {
-          if (event.key === "Escape") setAboutState(false);
+          if (event.key === "Escape") closeAbout();
         });
       })();
     </script>
