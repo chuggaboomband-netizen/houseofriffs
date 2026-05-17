@@ -35,7 +35,7 @@
           <img class="site-emblem" src="assets/hor-emblem.svg" alt="House of Riffs emblem" />
         </a>
         <nav class="site-nav" aria-label="Primary">
-          <a href="index.html">Home</a>
+          <a href="index.html" id="homeNavLink">Home</a>
           <button type="button" class="nav-toggle-link" id="aboutToggle" aria-expanded="false" aria-controls="aboutPanel">About</button>
           <a href="roster.html">Roster</a>
           <a href="events.html">Previous Events</a>
@@ -50,6 +50,8 @@
       <section class="hero-copy">
         <p>Rock &amp; metal events management</p>
       </section>
+
+      <p class="hero-copyright">&copy; House of Riffs Ltd</p>
 
       <section class="about-panel" id="aboutPanel" aria-hidden="true">
         <button type="button" class="about-close" id="aboutClose" aria-label="Close about panel">
@@ -87,6 +89,7 @@
     <script>
       (() => {
         const landingPage = document.getElementById("landingPage");
+        const homeNavLink = document.getElementById("homeNavLink");
         const aboutToggle = document.getElementById("aboutToggle");
         const aboutClose = document.getElementById("aboutClose");
         const aboutPanel = document.getElementById("aboutPanel");
@@ -98,7 +101,7 @@
         let closeTimeoutId;
         let returnTimeoutId;
 
-        if (!landingPage || !aboutToggle || !aboutClose || !aboutPanel) return;
+        if (!landingPage || !homeNavLink || !aboutToggle || !aboutClose || !aboutPanel) return;
 
         const clearTransitionTimers = () => {
           window.clearTimeout(openTimeoutId);
@@ -148,6 +151,11 @@
 
         aboutToggle.addEventListener("click", openAbout);
         aboutClose.addEventListener("click", closeAbout);
+        homeNavLink.addEventListener("click", (event) => {
+          if (!landingPage.classList.contains("is-about-open")) return;
+          event.preventDefault();
+          closeAbout();
+        });
 
         document.addEventListener("keydown", (event) => {
           if (event.key === "Escape") closeAbout();
