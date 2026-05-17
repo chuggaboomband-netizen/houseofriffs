@@ -759,7 +759,8 @@ img {
   .about-panel {
     --about-panel-width: calc(100vw - 24px);
     gap: 12px;
-    padding: 138px 12px 12px;
+    justify-content: flex-start;
+    padding: 92px 12px 12px;
   }
 
   .about-copy {
@@ -884,7 +885,8 @@ img {
 
   .about-panel {
     --about-panel-width: calc(100vw - 16px);
-    padding: 126px 8px 8px;
+    justify-content: flex-start;
+    padding: 84px 8px 8px;
   }
 
   .about-copy {
