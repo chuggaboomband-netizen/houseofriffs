@@ -67,6 +67,11 @@ img {
     #060606;
 }
 
+.roster-page {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
 .hero-track,
 .hero-image,
 .hero-overlay {
@@ -1019,6 +1024,10 @@ img {
 @media (min-width: 721px) {
   .content-page {
     padding: 26px 34px 48px;
+  }
+
+  .roster-page {
+    padding-inline: 40px;
   }
 
   .page-header {
