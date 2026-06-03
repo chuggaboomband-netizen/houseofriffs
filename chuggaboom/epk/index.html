@@ -326,7 +326,7 @@
             return dot;
           });
 
-          let i = 0, timer = null, delay = 5000;
+          let i = 0, timer = null, delay = 5000, isVisible = false;
           function activate(n){
             slides.forEach((s, j)=> s.classList.toggle('is-active', j===n));
             dots.forEach((d, j)=> d.classList.toggle('is-active', j===n));
@@ -338,7 +338,11 @@
           prevBtn.addEventListener('click', prev);
           nextBtn.addEventListener('click', next);
 
-          function start(){ if(slides.length>1 && !prefersReduced){ timer = setInterval(next, delay); } }
+          function start(){
+            if(slides.length > 1 && !prefersReduced && isVisible && !document.hidden){
+              timer = setInterval(next, delay);
+            }
+          }
           function stop(){ if(timer){ clearInterval(timer); timer=null; } }
           function restart(){ stop(); start(); }
 
@@ -346,7 +350,16 @@
           el.addEventListener('mouseleave', start);
           document.addEventListener('visibilitychange', ()=>{ if(document.hidden) stop(); else start(); });
 
-          activate(0); start();
+          const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            isVisible = !!entry && entry.isIntersecting;
+            if (isVisible) start();
+            else stop();
+          }, { threshold: 0.35 });
+
+          observer.observe(el);
+
+          activate(0);
         }
 
         async function getFilesFromFolder(folder){
